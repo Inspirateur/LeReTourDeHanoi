@@ -22,7 +22,7 @@ class Ninja(Mob):
 		imagesNinja = load_imgs(img_lists, imgpath)
 		atkList = [
 			Atk(
-				"sabre", 2.5, 64, 32, load_imgs({"idle": ["particlehit"]}, "Images/Blanchon"),
+				"sabre", 2.5, 64, 32, load_imgs({"idle": ["particlehit"]}, "Images/Blanchon", 1),
 				10, 10, -1, 0, 0, 0, 400
 			)
 		]

@@ -1,5 +1,5 @@
 # Le Re-Tour De Hanoï
-Winning game of [UGA IUT2](https://iut2.univ-grenoble-alpes.fr/) gamejam 2017, cleaned and ported to Python 3.8 (but no feature was added).
+Winning game of [UGA IUT2](https://iut2.univ-grenoble-alpes.fr/) gamejam 2017, cleaned and ported to Python 3.7 (but no feature was added).
 
 Gamejam constraints:
 * 4 days

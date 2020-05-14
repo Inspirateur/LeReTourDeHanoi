@@ -9,7 +9,7 @@ def readFile():
 	try:
 		with open(f"leaderboard.txt", "r") as flead:
 			return json.load(flead)
-	except json.decoder.JSONDecodeError:
+	except (json.decoder.JSONDecodeError, FileNotFoundError):
 		return {dif(False): {}, dif(True): {}}
 
 

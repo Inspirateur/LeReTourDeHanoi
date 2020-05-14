@@ -57,11 +57,11 @@ def main(self, name, difHard):
 	path = "Images/Blanchon"
 	imagesBlanchon = load_imgs(imagesBlanchonList, path)
 	blanchon_atkList = [
-		Atk("autoHit1", 0.5, 32, 32, load_imgs({"idle": ["particlehit"]}, path), 10, 5, -1, 0, 0, 0, 225),
-		Atk("autoHit2", 0.7, 32, 32, load_imgs({"idle": ["particlehit"]}, path), 15, 5, -2, 0, 0, 0, 300),
-		Atk("autoHit3", 0.7, 32, 32, load_imgs({"idle": ["particlehit"]}, path), 15, 6, -16, 0, 0, 0, 500),
+		Atk("autoHit1", 0.5, 32, 32, load_imgs({"idle": ["particlehit"]}, path, 1), 10, 5, -1, 0, 0, 0, 225),
+		Atk("autoHit2", 0.7, 32, 32, load_imgs({"idle": ["particlehit"]}, path, 1), 15, 5, -2, 0, 0, 0, 300),
+		Atk("autoHit3", 0.7, 32, 32, load_imgs({"idle": ["particlehit"]}, path, 1), 15, 6, -16, 0, 0, 0, 500),
 		Atk("EOF", 4, 32, 17, load_imgs({"idle": ["vector"]}, path), 15, 4, -1, 0, 4, 0, 2000),
-		Atk("airAutoHit", 1, 64, 32, load_imgs({"idle": ["particlehit"]}, path), 10, 5, 5, 0, 0, 0, 300)
+		Atk("airAutoHit", 1, 64, 32, load_imgs({"idle": ["particlehit"]}, path, 1), 10, 5, 5, 0, 0, 0, 300)
 	]
 	blanchon = Hero(200, 200, 64, 64, imagesBlanchon, 0.3, 0.7, 8, 6, WIDTH, 100.0, blanchon_atkList, difHard)
 	sol = Platform(0, HEIGHT - 70, WIDTH, 10, pygame.image.load("Images/plateformtest.png").convert_alpha(), 0.4)
