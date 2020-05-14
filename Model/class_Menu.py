@@ -414,7 +414,7 @@ class LeaderboardMenu(Menu):
 				colpos = 190+col*self.scr_width/len(tabScores)
 				self.screen.blit(difftext, (colpos, 190))
 				for row, (name, score) in enumerate(sorted(tabScore.items(), key=lambda kv: kv[1])):
-					score = self.myfont.render(f"{name} - {score}", 1, (0, 0, 0))
+					score = self.myfont.render(f"{name} - {score:,}", 1, (0, 0, 0))
 					self.screen.blit(score, (colpos, 250 + (30 * row)))
 
 			# Partie texte pour quitter
@@ -450,7 +450,7 @@ def run():
 		"D": ["b_gameover", "b_gameover"],
 	}
 	path = "Images/Blanchon"
-	imagesBlanchon = load_imgs(imagesBlanchonList, path)
+	imagesBlanchon = load_imgs(imagesBlanchonList, path, scale=8)
 
 	blanchon = AnimItem(imagesBlanchon, statesBlanchon, 500, 384)
 	anim = [blanchon]

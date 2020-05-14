@@ -22,7 +22,7 @@ class Demon(Mob):
 			"D": ["boss_dead", "boss_dead"],
 		}
 		imgpath = "Images/Boss"
-		imagesDemon = load_imgs(img_lists, imgpath)
+		imagesDemon = load_imgs(img_lists, imgpath, scale=4)
 		atkList = [
 			Atk(
 				"feu", 1.5, 32, 16, load_imgs({"idle": ["fire_1", "fire_2"]}, imgpath),
