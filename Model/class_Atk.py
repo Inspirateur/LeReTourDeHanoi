@@ -28,6 +28,8 @@ class Atk:
 	def update(self, fps):
 		if self.timer > 0:
 			self.timer = self.timer - (1.0/fps)
+		else:
+			self.timer = 0
 
 	# Sert a lancer le spell a gauche
 	def get_width(self):

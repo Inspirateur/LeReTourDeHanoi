@@ -214,19 +214,25 @@ def main(self, name, difHard):
 					tailleRect1 = 60*cd/blanchon_atkList[4].get_maxCd()
 					posRect1 = 715 - tailleRect1
 					fenetre.blit(blanchonAaMidAir, (100, 660))
-					CdAH = damageFont.render(f"{cd:.1f}", 1, (255, 0, 0))
+					CdAH = damageFont.render(f"{cd:.1f}" if cd else "", 1, (255, 0, 0))
 				elif blanchon.get_autoHitTimer3() > 0:
 					pygame.draw.rect(fenetre, (200, 200, 50), (95, 655, 60, 60))
 					fenetre.blit(blanchonAa3, (100, 660))
 					tailleRect1 = 60*blanchon.get_autoHitTimer3()/3000
 					posRect1 = 715 - tailleRect1
-					CdAH = damageFont.render(f"{blanchon.get_autoHitTimer3()/1000:.1f}", 1, (255, 0, 0))
+					CdAH = damageFont.render(
+						f"{blanchon.get_autoHitTimer3()/1000:.1f}" if blanchon.get_autoHitTimer3() else "",
+						1, (255, 0, 0)
+					)
 				elif blanchon.get_autoHitTimer2() > 0:
 					pygame.draw.rect(fenetre, (200, 200, 50), (95, 655, 60, 60))
 					fenetre.blit(blanchonAa2, (100, 660))
 					tailleRect1 = 60*blanchon.get_autoHitTimer2()/3000
 					posRect1 = 715 - tailleRect1
-					CdAH = damageFont.render(f"{blanchon.get_autoHitTimer2()/1000:.1f}", 1, (255, 0, 0))
+					CdAH = damageFont.render(
+						f"{blanchon.get_autoHitTimer2()/1000:.1f}" if blanchon.get_autoHitTimer2() else "",
+						1, (255, 0, 0)
+					)
 				else:
 					cd = blanchon_atkList[0].get_cd()
 					if cd > 0:
@@ -237,13 +243,12 @@ def main(self, name, difHard):
 					fenetre.blit(blanchonAa1, (100, 660))
 					tailleRect1 = 60*cd/blanchon_atkList[0].get_maxCd()
 					posRect1 = 715 - tailleRect1
-					CdAH = damageFont.render(f"{cd:.1f}", 1, (255, 0, 0))
+					CdAH = damageFont.render(f"{cd:.1f}" if cd else "", 1, (255, 0, 0))
 
 				CaseAa = pygame.Surface((60, tailleRect1), pygame.SRCALPHA)
 				CaseAa.fill(colorRect)
 				fenetre.blit(CaseAa, (95, posRect1))
-				if cd > 0:
-					fenetre.blit(CdAH, (110, 670))
+				fenetre.blit(CdAH, (110, 670))
 				if blanchon_atkList[3].get_cd() > 0:
 					pygame.draw.rect(fenetre, (0, 0, 0), (175, 655, 60, 60))
 					pygame.draw.rect(fenetre, (255, 255, 255), (180, 660, 50, 50))

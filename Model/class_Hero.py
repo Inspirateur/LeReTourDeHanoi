@@ -276,10 +276,12 @@ class Hero(Charac):
 
 		if self.autoHitTimer2 > 0:
 			self.autoHitTimer2 = self.autoHitTimer2 - (1000.0/fps)
-
+		else:
+			self.autoHitTimer2 = 0
 		if self.autoHitTimer3 > 0:
 			self.autoHitTimer3 = self.autoHitTimer3 - (1000.0/fps)
-
+		else:
+			self.autoHitTimer3 = 0
 		Charac.update(self, hero, fps)
 
 	# Ici on peut vérifier si l'atk i à touché quelqu'un avant de la suppr

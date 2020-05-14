@@ -34,7 +34,7 @@ class Ninja(Mob):
 
 	def update(self, hero, fps):
 		# TODO : L'IA DU NINJA ICI
-		if self.onGround:
+		if not self.onGround:
 			if self.left:
 				self.moveLeft()
 			else:

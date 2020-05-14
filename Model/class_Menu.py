@@ -344,33 +344,33 @@ class CreditMenu(Menu):
 			# Partie texte pour les concepteurs
 			graphiste = self.myfont.render("Concepteurs : ", 1, (0, 0, 0))
 			self.screen.blit(graphiste, (190, 280))
-			dumas = self.myfont.render("    - ORTHLIEB  Teo", 1, (0, 0, 0))
+			dumas = self.myfont.render("    - ORTHLIEB    Teo", 1, (0, 0, 0))
 			self.screen.blit(dumas, (190, 310))
-			sorin = self.myfont.render("    - DERVAUX  Dylan ", 1, (0, 0, 0))
+			sorin = self.myfont.render("    - DERVAUX      Dylan ", 1, (0, 0, 0))
 			self.screen.blit(sorin, (190, 340))
-			dumas = self.myfont.render("    - DUMAS  Remi", 1, (0, 0, 0))
+			dumas = self.myfont.render("    - DUMAS    Remi", 1, (0, 0, 0))
 			self.screen.blit(dumas, (190, 370))
-			sorin = self.myfont.render("    - SORIN-DOIZE  Clement ", 1, (0, 0, 0))
+			sorin = self.myfont.render("    - SORIN-DOIZE    Clement ", 1, (0, 0, 0))
 			self.screen.blit(sorin, (190, 400))
-			gineys = self.myfont.render("   - GINEYS  Julien", 1, (0, 0, 0))
+			gineys = self.myfont.render("   - GINEYS    Julien", 1, (0, 0, 0))
 			self.screen.blit(gineys, (190, 430))
 
 			# Partie texte pour les devs
 			graphiste = self.myfont.render("Developpeurs : ", 1, (0, 0, 0))
 			self.screen.blit(graphiste, (520, 150))
-			dumas = self.myfont.render("    - ORTHLIEB  Teo", 1, (0, 0, 0))
+			dumas = self.myfont.render("    - ORTHLIEB    Teo", 1, (0, 0, 0))
 			self.screen.blit(dumas, (520, 180))
-			sorin = self.myfont.render("    - DERVAUX  Dylan ", 1, (0, 0, 0))
+			sorin = self.myfont.render("    - DERVAUX      Dylan ", 1, (0, 0, 0))
 			self.screen.blit(sorin, (520, 210))
 
 			# Partie texte pour les graphistes
 			graphiste = self.myfont.render("Graphistes : ", 1, (0, 0, 0))
 			self.screen.blit(graphiste, (800, 300))
-			dumas = self.myfont.render("    - DUMAS  Remi", 1, (0, 0, 0))
+			dumas = self.myfont.render("    - DUMAS    Remi", 1, (0, 0, 0))
 			self.screen.blit(dumas, (800, 330))
-			sorin = self.myfont.render("    - SORIN-DOIZE  Clement ", 1, (0, 0, 0))
+			sorin = self.myfont.render("    - SORIN-DOIZE    Clement ", 1, (0, 0, 0))
 			self.screen.blit(sorin, (800, 360))
-			gineys = self.myfont.render("   - GINEYS  Julien", 1, (0, 0, 0))
+			gineys = self.myfont.render("   - GINEYS    Julien", 1, (0, 0, 0))
 			self.screen.blit(gineys, (800, 390))
 
 			# Partie texte pour ^^
@@ -378,8 +378,8 @@ class CreditMenu(Menu):
 			self.screen.blit(graphiste, (780, 530))
 
 			# Partie texte pour quitter
-			quit = self.myfontMini.render("Appuyer sur 'Entree' pour ", 1, (0, 0, 0))
-			self.screen.blit(quit, (1100, 600))
+			quit1 = self.myfontMini.render("Appuyer sur 'Entree' pour ", 1, (0, 0, 0))
+			self.screen.blit(quit1, (1100, 600))
 			quit2 = self.myfontMini.render("retourner au menu principal ", 1, (0, 0, 0))
 			self.screen.blit(quit2, (1100, 620))
 
@@ -429,8 +429,8 @@ class LeaderboardMenu(Menu):
 				i += 1
 
 			# Partie texte pour quitter
-			quit = self.myfontMini.render("Appuyer sur 'Entree' pour ", 1, (0, 0, 0))
-			self.screen.blit(quit, (1100, 600))
+			quit1 = self.myfontMini.render("Appuyer sur 'Entree' pour ", 1, (0, 0, 0))
+			self.screen.blit(quit1, (1100, 600))
 			quit2 = self.myfontMini.render("retourner au menu principal ", 1, (0, 0, 0))
 			self.screen.blit(quit2, (1100, 620))
 
