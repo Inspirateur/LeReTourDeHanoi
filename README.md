@@ -6,7 +6,18 @@ Gamejam constraints:
 * Python 2.7 and Pygame
 * Theme: Combo
 
+*I tried my best to clean the code but it was done dirty and quickly plus I didn't had much coding experience at the time so it's quite unreadable.*
+
 ## Trailer (in french)
 <a href="https://www.youtube.com/watch?v=zqc3GcnmhmA">
-<img src="https://raw.githubusercontent.com/Inspirateur/LeReTourDeHanoi/master/Images/thumbnail.jpg?token=AFNROESUGV6DF5UJKVWT4IC6XSX7O" height="40%" width="50%" align="left">
+<img src="https://github.com/Inspirateur/LeReTourDeHanoi/blob/master/Images/thumbnail.jpg" height="40%" width="50%" align="left">
 </a>
+
+## Authors
+Dylan Dervaux,
+Remis Dumas,
+Julien Gineys, 
+Sorin-Doize Clement, 
+Teo Orthlieb
+
+*Special Thanks to [Koku](https://www.youtube.com/channel/UC2RiTsaZeKw2ta9__M2V4jQ) for letting us use his [boss music](https://www.youtube.com/watch?v=eVtovENP4ZI) !*
