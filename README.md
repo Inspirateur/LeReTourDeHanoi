@@ -6,7 +6,7 @@ Gamejam constraints:
 * Python 2.7 and Pygame
 * Theme: Combo
 
-*I tried my best to clean the code but it was done dirty and quickly plus I didn't had much coding experience at the time so it's quite unreadable.*
+*I tried my best to clean the code but it was done dirty and quickly plus we didn't had much coding experience at the time so it's quite unreadable.*
 
 ## Trailer (in french)
 <a href="https://www.youtube.com/watch?v=zqc3GcnmhmA">
