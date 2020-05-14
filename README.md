@@ -15,8 +15,8 @@ Gamejam constraints:
 
 ## Authors
 Dylan Dervaux,
-Remis Dumas,
 Julien Gineys, 
+Remis Dumas,
 Sorin-Doize Clement, 
 Teo Orthlieb
 
