@@ -8,5 +8,5 @@ Gamejam constraints:
 
 ## Trailer (in french)
 <a href="https://www.youtube.com/watch?v=zqc3GcnmhmA">
-<img src="https://img.youtube.com/vi/zqc3GcnmhmA/maxresdefault.jpg" height="40%" width="40%" align="right">
+<img src="https://raw.githubusercontent.com/Inspirateur/LeReTourDeHanoi/master/Images/thumbnail.jpg?token=AFNROERQXI4TGVA3DXF45LK6XSXZO" align="left">
 </a>
