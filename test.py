@@ -13,6 +13,7 @@ from Model.class_Corbeau import Corbeau
 from Model.class_Demon import Demon
 from Model.class_Moine import Moine
 from utils import load_imgs
+from random import randint
 
 
 # initialisation de pygame
@@ -105,11 +106,11 @@ def main(self, name, difHard):
 		# INIT PLATEFORMES
 		platforms = [
 			Platform(
-				300 + (pygame.time.get_ticks() % 400) - 200, HEIGHT - 180, 100, 10,
+				randint(100, 400), HEIGHT - 180, 100, 10,
 				pygame.image.load("Images/plateform.png").convert_alpha(), 1
 			),
 			Platform(
-				350 + (pygame.time.get_ticks() % 100) - 50, HEIGHT - 280, 100, 10,
+				randint(100, 400), HEIGHT - 280, 100, 10,
 				pygame.image.load("Images/plateform.png").convert_alpha(), 1
 			)
 		]
@@ -118,15 +119,15 @@ def main(self, name, difHard):
 			if salve < 5:
 				# AJOUTER DES MOBS A FOES
 				while i < int(niveau + salve / 5):
-					mobId = (pygame.time.get_ticks()) % 4
+					mobId = randint(0, 3)
 					if mobId == 0:
-						foes.append(Ninja((500 * niveau * salve) % (WIDTH - 100) + 50, 200, WIDTH, 1 + niveau / 10))
+						foes.append(Ninja(randint(50, WIDTH - 100), HEIGHT-300, WIDTH, 1 + niveau / 10))
 					elif mobId == 1:
-						foes.append(Samurai((500 * niveau * salve) % (WIDTH - 100) + 50, 200, WIDTH, 1 + niveau / 10))
+						foes.append(Samurai(randint(50, WIDTH - 100), HEIGHT-300, WIDTH, 1 + niveau / 10))
 					elif mobId == 2:
-						foes.append(Archer((500 * niveau * salve) % (WIDTH - 100) + 50, 200, WIDTH, 1 + niveau / 10))
+						foes.append(Archer(randint(50, WIDTH - 100), HEIGHT-300, WIDTH, 1 + niveau / 10))
 					elif mobId == 3:
-						foes.append(Corbeau((500 * niveau * salve) % (WIDTH - 100) + 50, 200, WIDTH, 1 + niveau / 10))
+						foes.append(Corbeau(randint(50, WIDTH - 100), HEIGHT-300, WIDTH, 1 + niveau / 10))
 					i += 1
 			else:
 				# AJOUTER UN BOSS A FOES
@@ -357,7 +358,7 @@ def main(self, name, difHard):
 				pygame.draw.rect(
 					fenetre, (0, 255, 0), (
 						blanchon.get_rect().x, blanchon.get_rect().y - 10,
-						int(max(min(blanchon.get_hp() / float(blanchon.get_hpMax()) * 60, 60), 0)), 6
+						int(max(blanchon.get_hp()/float(blanchon.get_hpMax())*60, 0)), 6
 					)
 				)
 

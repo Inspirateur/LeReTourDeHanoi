@@ -17,18 +17,18 @@ class Animated(Entity):
 		self.timerAnim = 0
 
 	def changeState(self, newState):
-		if self.state[0] != 'D' and newState in self.states:
+		if self.state[0] != 'D' and newState != self.state and newState in self.images:
 			self.state = newState
 			self.indexImg = 0
 			self.timerAnim = 0
 
 	def nextImg(self, fps):
 		self.timerAnim = self.timerAnim + (1000/fps)
-		timeState = self.states.get(self.state)
+		timeState = self.states[self.state]
 		if self.timerAnim > timeState:
 			self.timerAnim = self.timerAnim - timeState
 			self.indexImg = self.indexImg + 1
-			if self.indexImg == len(self.images.get(self.state)):
+			if self.indexImg == len(self.images[self.state]):
 				if self.state[0] == 'R':  # Si l'animation est en mode repeat
 					self.indexImg = 0
 				elif self.state[0] == 'F' or self.state[0] == 'D':  # Si l'animation est en mode freeze ou dead

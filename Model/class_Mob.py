@@ -1,10 +1,8 @@
 from Model.class_Charac import Charac
 
 
-# Hero est la classe générique des héros
-# Carastéristiques des héros:
-#   Ils sont controlés au clavier
-#   Ils peuvent double-sauter
+# Mob est la classe générique des mobs
+# Carastéristiques des mobs:
 #   Ils ont des spells (définis dans la classe fille)
 class Mob(Charac):
 	def __init__(

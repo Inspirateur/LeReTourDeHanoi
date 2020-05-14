@@ -3,6 +3,7 @@ from Model.class_Animated import Animated
 from Model.class_Mob import Mob
 from Model.class_Atk import Atk
 from utils import load_imgs
+from random import randint
 
 
 # Hero est la classe générique des héros
@@ -66,6 +67,6 @@ class Archer(Mob):
 								Animated.changeState(self, "Oaa1Right")
 					else:
 						self.flee_set = True
-						self.flee_x = (self.x + pygame.time.get_ticks()%self.windowWidth)%(self.windowWidth - self.rect.width - 200) + 100
+						self.flee_x = randint(self.rect.width, self.windowWidth-100)
 
 		Mob.update(self, hero, fps)

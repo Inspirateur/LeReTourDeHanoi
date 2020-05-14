@@ -145,7 +145,7 @@ class GameMenu(Menu):
 				if self.cur_item == 2:
 					tuto.main(self)
 				if self.cur_item == 3:
-					self.menu[2].run(leaderboard.readFile(False), leaderboard.readFile(True), )
+					self.menu[2].run(leaderboard.readFile())
 				if self.cur_item == 4:
 					self.menu[1].run()
 				if self.cur_item == 5:
@@ -194,22 +194,22 @@ class NameMenu(Menu):
 		self.cur_item = 0
 		self.items[self.cur_item].set_selected(True)
 
-	def input_name(self, key, difHard):
+	def input_name(self, key, isHard):
 		if key == pygame.K_RETURN:
-			main(self, self.name, difHard)
+			main(self, self.name, isHard)
 		elif 65 <= key <= 90 or 97 <= key <= 122 or key == 32:
 			self.name = self.name + str(chr(key))
 		elif key == 8:
 			self.name = self.name[:len(self.name) - 1]
 
-	def run(self, difHard):
+	def run(self, isHard):
 		while 1:
 			self.clock.tick(60)
 			for event in pygame.event.get():
 				if event.type == pygame.QUIT:
 					sys.exit()
 				if event.type == pygame.KEYDOWN:
-					self.input_name(event.key, difHard)
+					self.input_name(event.key, isHard)
 
 			self.screen.blit(self.bg, (0, 0))
 			name = self.myfont.render("Entrez votre nom : ", 1, (255, 255, 0))
@@ -236,7 +236,7 @@ class DieMenu(Menu):
 		self.cur_item = 0
 		self.items[self.cur_item].set_selected(True)
 
-	def set_item_selection(self, key, difHard):
+	def set_item_selection(self, key, isHard):
 		if self.cur_item is None:
 			self.cur_item = 0
 		else:
@@ -258,17 +258,15 @@ class DieMenu(Menu):
 				self.items[self.cur_item].set_selected(True)
 			elif key == pygame.K_RETURN:
 				if self.cur_item == 0:
-					main(self, self.name, difHard)
+					main(self, self.name, isHard)
 				if self.cur_item == 1:
 					run()
 
-	def run(self, difHard):
-		leaderboard.writeFile(
-			leaderboard.addScore(
-				leaderboard.readFile(difHard), self.score, self.name
-			),
-			difHard
-		)
+	def run(self, isHard):
+		tabScores = leaderboard.readFile()
+		dif = leaderboard.dif(isHard)
+		tabScores[dif][self.name] = int(self.score)
+		leaderboard.writeFile(tabScores)
 		while 1:
 			self.clock.tick(60)
 
@@ -276,7 +274,7 @@ class DieMenu(Menu):
 				if event.type == pygame.QUIT:
 					sys.exit()
 				if event.type == pygame.KEYDOWN:
-					self.set_item_selection(event.key, difHard)
+					self.set_item_selection(event.key, isHard)
 
 			self.screen.blit(self.img, (390, 80))
 			self.screen.blit(pygame.image.load("Images/Menu/GameOver.png").convert_alpha(), (480, 140))
@@ -399,7 +397,7 @@ class LeaderboardMenu(Menu):
 		if key == pygame.K_RETURN:
 			run()
 
-	def run(self, tabScoreMoyen, tabScoreHard):
+	def run(self, tabScores):
 		while 1:
 			self.clock.tick(60)
 			for event in pygame.event.get():
@@ -409,24 +407,15 @@ class LeaderboardMenu(Menu):
 					self.input_name(event.key)
 
 			self.screen.blit(self.bg, (0, 0))
+			self.screen.blit(self.img, (520, 50))
 
-			self.screen.blit(self.img, (520, 100))
-
-			normal = self.myfontBig.render("Normal", 1, (0, 0, 0))
-			self.screen.blit(normal, (190, 190))
-			i = 0
-			while i < len(tabScoreMoyen):
-				score = self.myfont.render(tabScoreMoyen[i][0] + " - " + tabScoreMoyen[i][1], 1, (0, 0, 0))
-				self.screen.blit(score, (190, 250 + (30 * i)))
-				i += 1
-
-			insane = self.myfontBig.render("Insane", 1, (0, 0, 0))
-			self.screen.blit(insane, (900, 190))
-			i = 0
-			while i < len(tabScoreHard):
-				score = self.myfont.render(tabScoreHard[i][0] + " - " + tabScoreHard[i][1], 1, (0, 0, 0))
-				self.screen.blit(score, (900, 250 + (30 * i)))
-				i += 1
+			for col, (diff, tabScore) in enumerate(tabScores.items()):
+				difftext = self.myfontBig.render(diff, 1, (0, 0, 0))
+				colpos = 190+col*self.scr_width/len(tabScores)
+				self.screen.blit(difftext, (colpos, 190))
+				for row, (name, score) in enumerate(sorted(tabScore.items(), key=lambda kv: kv[1])):
+					score = self.myfont.render(f"{name} - {score}", 1, (0, 0, 0))
+					self.screen.blit(score, (colpos, 250 + (30 * row)))
 
 			# Partie texte pour quitter
 			quit1 = self.myfontMini.render("Appuyer sur 'Entree' pour ", 1, (0, 0, 0))
