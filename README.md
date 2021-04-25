@@ -14,9 +14,9 @@ Gamejam constraints:
 </a>
 
 ## Authors
-Dylan Dervaux,
+[Dylan Dervaux](https://github.com/Dylanderv),
 Julien Gineys, 
-Rémis Dumas,
+[Rémis Dumas](https://github.com/Plouffi),
 Clément Sorin-Doize, 
 Téo Orthlieb
 
