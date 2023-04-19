@@ -1,2 +1,2 @@
 pygame
-setuptools==44.0
+setuptools==65.5.1
