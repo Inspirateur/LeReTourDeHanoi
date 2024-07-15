@@ -20,4 +20,4 @@ Julien Gineys,
 Clément Sorin-Doize, 
 Téo Orthlieb
 
-*Special Thanks to [Koku](https://www.youtube.com/channel/UC2RiTsaZeKw2ta9__M2V4jQ) for letting us use his [boss music](https://www.youtube.com/watch?v=eVtovENP4ZI) !*
+*Special Thanks to [Kokounet](https://www.youtube.com/channel/UC2RiTsaZeKw2ta9__M2V4jQ) for letting us use his [boss music](https://www.youtube.com/watch?v=eVtovENP4ZI) !*
